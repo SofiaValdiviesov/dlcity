@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PlacePulse 2.0 Visualizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      .container {
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+  <center>
+    <div class="container">
+        <h1>PlacePulse 2.0 Visualizer</h1>
+        <hr width="80%" color="green">
+      <p>{{city}}</p>
+    </div>
+  </center>
+        <table align="center">
+            {% for i in range(3) %}
+            <tr>
+                {% for j in range(3) %}
+                <td width="33%"><img src="{{paths[i*3+j]}}" width="200" height="150"><br>{{scores[i*3+j]}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    </div>
+  <center>
+  <input type="button" value="Refresh Images" onClick="window.location.reload()">
+  </center>
+  </body>
+</html>
